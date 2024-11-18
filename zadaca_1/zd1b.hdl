@@ -1,0 +1,13 @@
+CHIP zd1b {
+    // negb ((negb x) && y && z) && negb (x && y && (negb z)) && (x && (negb y) && z)
+    // => x && (negb y) && z.
+
+    IN x, y, z;
+    OUT out;
+
+    PARTS:
+    Not(in = y, out = ny);
+
+    And(a = x, b = ny, out = XandNY);
+    And(a = XandNY, b = z, out = out);
+}
