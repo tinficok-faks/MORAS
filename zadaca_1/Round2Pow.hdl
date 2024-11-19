@@ -1,0 +1,62 @@
+CHIP Round2Pow {
+    IN in[16];
+    OUT out[16];
+
+    PARTS:
+    // pronalazak najviseg bita
+    Or(a = in[15], b = false, out = bit15);
+    Or(a = in[14], b = bit15, out = bit14);
+    Or(a = in[13], b = bit14, out = bit13);
+    Or(a = in[12], b = bit13, out = bit12);
+    Or(a = in[11], b = bit12, out = bit11);
+    Or(a = in[10], b = bit11, out = bit10);
+    Or(a = in[9], b = bit10, out = bit9);
+    Or(a = in[8], b = bit9, out = bit8);
+    Or(a = in[7], b = bit8, out = bit7);
+    Or(a = in[6], b = bit7, out = bit6);
+    Or(a = in[5], b = bit6, out = bit5);
+    Or(a = in[4], b = bit5, out = bit4);
+    Or(a = in[3], b = bit4, out = bit3);
+    Or(a = in[2], b = bit3, out = bit2);
+    Or(a = in[1], b = bit2, out = bit1);
+    Or(a = in[0], b = bit1, out = bit0);
+
+    
+    // okretanje svih bitova
+    Not(in = bit15, out = Nbit15);
+    Not(in = bit14, out = Nbit14);
+    Not(in = bit13, out = Nbit13);
+    Not(in = bit12, out = Nbit12);
+    Not(in = bit11, out = Nbit11);
+    Not(in = bit10, out = Nbit10);
+    Not(in = bit9, out = Nbit9);
+    Not(in = bit8, out = Nbit8);
+    Not(in = bit7, out = Nbit7);
+    Not(in = bit6, out = Nbit6);
+    Not(in = bit5, out = Nbit5);
+    Not(in = bit4, out = Nbit4);
+    Not(in = bit3, out = Nbit3);
+    Not(in = bit2, out = Nbit2);
+    Not(in = bit1, out = Nbit1);
+    Not(in = bit0, out = Nbit0);
+
+
+    And(a = bit15, b = false, out = out[15]);
+    And(a = bit14, b = Nbit15, out = out[14]);
+    And(a = bit13, b = Nbit14, out = out[13]);
+    And(a = bit12, b = Nbit13, out = out[12]);
+    And(a = bit11, b = Nbit12, out = out[11]);
+    And(a = bit10, b = Nbit11, out = out[10]);
+    And(a = bit9, b = Nbit10, out = out[9]);
+    And(a = bit8, b = Nbit9, out = out[8]);
+    And(a = bit7, b = Nbit8, out = out[7]);
+    And(a = bit6, b = Nbit7, out = out[6]);
+    And(a = bit5, b = Nbit6, out = out[5]);
+    And(a = bit4, b = Nbit5, out = out[4]);
+    And(a = bit3, b = Nbit4, out = out[3]);
+    And(a = bit2, b = Nbit3, out = out[2]);
+    And(a = bit1, b = Nbit2, out = out[1]);
+    And(a = bit0, b = Nbit1, out = out[0]);
+    
+    // s negativnim brojevima ne radi
+}
