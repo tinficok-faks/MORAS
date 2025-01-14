@@ -1,0 +1,11 @@
+1. zd:
+    kod parseComms modificiran if odma kod "_parse_command" 
+    kod "parseSymbs" je dodan if kod "_parse_variables"
+
+2. zd:
+    unutar "parseMacroNaredbe" su definirane kako koja naredba radi
+    i dodan dio u parser za parsiranje macro naredbi
+
+3. zd:
+    dva zasebna filea koja se pozovu u "__main__" u parseru
+    uz pomoc 2. zd
