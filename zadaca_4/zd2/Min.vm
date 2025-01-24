@@ -1,0 +1,41 @@
+push static 0
+push static 1
+push static 2
+
+call Min.min 3
+pop static 3
+
+label END
+goto END
+
+function Min.min 0
+
+push argument 0
+push argument 1
+lt
+if-goto MIN0
+
+push argument 1
+push argument 2
+lt
+if-goto NAJ_MIN
+
+push argument 2
+return
+
+label MIN0
+push argument 0
+push argument 2
+lt
+if-goto MIN1
+
+push argument 2
+return
+
+label MIN1
+push argument 0
+return
+
+label NAJ_MIN
+push argument 1
+return
