@@ -1,0 +1,28 @@
+class Main
+{
+    function void main()
+	{
+		var Array A;
+		var int i;
+        // A = {15, 2, 0, 4, 1}
+		let A = Array.new(5);
+		let A[0] = 15;
+		let A[1] = 2;
+		let A[2] = 0;
+		let A[3] = 4;
+		let A[4] = 1;
+		
+		do QuickSort.qsort(A, 5);
+		
+		let i = 0;
+		while (i < 5)
+		{
+			do Output.printInt(A[i]);
+			do Output.println();
+			let i = i + 1;
+		}
+		
+		do A.dispose();
+		return;
+	}
+}
